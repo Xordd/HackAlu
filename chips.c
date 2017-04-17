@@ -29,7 +29,7 @@ void demux(const int s, const int *in, int *out) {
  */
 void and16(const int *a, const int *b, int *out) {
 	int i=0;
-	for(i=0;i<16;i++) {
+	for(i=0; i<16; i++) {
 		out[i] = gAnd(a[i], b[i]);
 	}
 }
@@ -40,7 +40,7 @@ void and16(const int *a, const int *b, int *out) {
  */
 void or16(const int *a, const int *b, int *out) {
 	int i=0;
-	for(i=0;i<16;i++) {
+	for(i=0; i<16; i++) {
 		out[i] = gOr(a[i], b[i]);
 	}
 }
@@ -51,7 +51,7 @@ void or16(const int *a, const int *b, int *out) {
  */
 void not16(const int *in, int *out) {
 	int i=0;
-	for(i=0;i<16;i++) {
+	for(i=0; i<16; i++) {
 		out[i] = gNot(in[i]);
 	}
 }
@@ -64,7 +64,7 @@ void mux16(const int s, const int *a, const int *b, int *out) {
 	int notS = gNot(s);
 	
 	int i=0;
-	for(i=0;i<16;i++) {
+	for(i=0; i<16; i++) {
 		out[i] = gOr(gAnd(notS, a[i]), gAnd(s, b[i]));
 	}
 }
@@ -79,7 +79,7 @@ void mux4Way16(const int s1, const int s0, const int *a, const int *b, const int
 	int notS1 = gNot(s1);
 	
 	int i=0;
-	for(i=0;i<16;i++) {
+	for(i=0; i<16; i++) {
 		int bitA = gAnd(gAnd(notS0, notS1), a[i]);
 		int bitB = gAnd(gAnd(s0, notS1), b[i]);
 		int bitC = gAnd(gAnd(notS0, s1), c[i]);

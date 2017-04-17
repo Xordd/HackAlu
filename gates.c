@@ -5,7 +5,7 @@
  NANDs or from gates derived from NANDs  */
 int gNand(int a, int b) {
 	if(a && b) return 0;
-	else return 1;
+	return 1;
 }
 
 int gNot(int a) {
